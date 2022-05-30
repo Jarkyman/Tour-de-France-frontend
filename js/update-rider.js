@@ -1,4 +1,4 @@
-const riderUrl = baseUrl + updateUrl + "raider/";
+const riderUrl = baseUrl + updateUrl + "rider/";
 let updateForm;
 
 function createFormEventListenerEdit() {
@@ -8,6 +8,8 @@ function createFormEventListenerEdit() {
 
 async function updateRider(rider) {
     const url = riderUrl + rider.riderId;
+
+    delete rider.riderId;
 
     const jsonString = JSON.stringify(rider);
     out(jsonString);
@@ -31,6 +33,7 @@ async function updateRider(rider) {
             alert("Something went wrong\nERROR status: " + response.status);
         }
     }
+    await riderSearchList()
     return response;
 }
 
