@@ -14,6 +14,7 @@
     <script defer src="../js/search-rider.js"></script>
     <script defer src="../js/update-rider.js"></script>
     <script defer src="../js/search-rider-config.js"></script>
+    <script defer src="../js/delete-rider.js"></script>
 </head>
 <body>
 <header class="bg-dark site-header sticky-top">
@@ -96,6 +97,7 @@
                 <th scope="col">Points</th>
                 <th scope="col">Mountain points</th>
                 <th scope="col">edit</th>
+                <th scope="col">Delete</th>
             </tr>
             </thead>
             <tbody id="tableRiders">
@@ -115,8 +117,8 @@
     </footer>
 </div>
 
-<!-- Modal -->
-<div class="modal fade" id="editRider" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<!-- Modal Edit -->
+<div class="modal fade" id="editRider" tabindex="-1" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered modal-lg">
         <div class="modal-content">
             <form id="editRiderForm">
@@ -164,6 +166,25 @@
                     <button type="submit" class="btn btn-success">Save changes</button>
                 </div>
             </form>
+        </div>
+    </div>
+</div>
+
+<!-- Modal Delete confirm-->
+<div class="modal fade" id="deleteConfirm" tabindex="-1"  aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" >Delete Rider</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <p id="riderDeleteName"></p>
+            </div>
+            <div class="modal-footer">
+                <button id="notDeletRider" type="button" class="btn btn-secondary" data-bs-dismiss="modal">No</button>
+                <button id="deleteRider" type="button" class="btn btn-danger" data-bs-dismiss="modal">Yes</button>
+            </div>
         </div>
     </div>
 </div>

@@ -14,6 +14,7 @@ function addAllRiders() {
         let cell6 = row.insertCell(5);
         let cell7 = row.insertCell(6);
         let cell8 = row.insertCell(7);
+        let cell9 = row.insertCell(8);
         cell1.innerText = riders[i].firstName;
         cell2.innerText = riders[i].lastName;
         cell3.innerText = riders[i].country;
@@ -22,24 +23,44 @@ function addAllRiders() {
         cell6.innerText = riders[i].points;
         cell7.innerText = riders[i].mountainPoints;
         cell8.appendChild(editButton(row.rowIndex, riders[i]));
+        cell9.appendChild(deleteButton(row.rowIndex, riders[i]));
     }
 
 }
 
 function editButton(index, rider) {
-    let edit = document.createElement('button');
+    let editBtn = document.createElement('button');
     let icon = document.createElement('i');
-    edit.type = 'button';
-    edit.setAttribute('id', 'Edit' + index);
-    edit.classList.add('btn', 'btn-primary');
+    editBtn.type = 'button';
+    editBtn.setAttribute('id', 'Edit' + index);
+    editBtn.classList.add('btn', 'btn-primary');
     icon.classList.add('fa-solid', 'fa-pen-to-square');
-    edit.appendChild(icon);
-    edit.setAttribute('data-bs-toggle', 'modal');
-    edit.setAttribute('data-bs-target', '#editRider');
-    edit.onclick = () => {
+    editBtn.appendChild(icon);
+    editBtn.setAttribute('data-bs-toggle', 'modal');
+    editBtn.setAttribute('data-bs-target', '#editRider');
+    editBtn.onclick = () => {
         fillForm(rider)
     };
-    return edit;
+    return editBtn;
+}
+
+function deleteButton(index, rider) {
+    let deleteBtn = document.createElement('button');
+    let icon = document.createElement('i');
+    let pTag = document.getElementById('riderDeleteName');
+    deleteBtn.type = 'button';
+    deleteBtn.setAttribute('id', 'Delete' + index);
+    deleteBtn.classList.add('btn', 'btn-danger');
+    icon.classList.add('fa-solid', 'fa-trash-can');
+    deleteBtn.appendChild(icon);
+    deleteBtn.setAttribute('data-bs-toggle', 'modal');
+    deleteBtn.setAttribute('data-bs-target', '#deleteConfirm');
+    deleteBtn.onclick = () => {
+        pTag.innerText = "Are you sure you want to delete " + rider.firstName + " " + rider.lastName;
+        const deleteRiderBtn = document.getElementById('deleteRider');
+        deleteRiderBtn.onclick = async () => await deleteRider(rider);
+    };
+    return deleteBtn;
 }
 
 async function fillForm(rider) {

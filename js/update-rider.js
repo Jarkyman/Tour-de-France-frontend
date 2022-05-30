@@ -33,7 +33,7 @@ async function updateRider(rider) {
             alert("Something went wrong\nERROR status: " + response.status);
         }
     }
-    await riderSearchList()
+    await riderSearchList();
     return response;
 }
 
