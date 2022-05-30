@@ -1,10 +1,3 @@
-/*
-Den gule trøje beregnes som den rytter der har den samlede hurtigste tid på de 3 etaper.
-Den hvide trøje beregnes som den rytter, af alle ryttere under 26 år, der har den samlede hurtigste tid på de 3 etaper.
-Den grønne trøje beregnes som den rytter med flest spurtpoint efter de 3 etaper.
-Den prikkede bjergtrøje beregnes som den rytter med flest bjergpoint efter de 3 etaper
- */
-
 document.addEventListener('DOMContentLoaded', setShirts);
 
 async function setShirts() {
