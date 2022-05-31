@@ -23,6 +23,13 @@ async function yellowShirt() {
     yellowRider = riders[0];
     yellowShirtName.innerText = yellowRider.firstName + " " + yellowRider.lastName;
     yellowShirtTeam.innerText = yellowRider.team.teamName;
+
+    const cellField = document.getElementById('topCell' + yellowRider.riderId);
+    let icon = document.createElement('img');
+    icon.src = "../img/Yellow.jpeg";
+    icon.classList.add('shirt-icon');
+    cellField.appendChild(icon);
+
 }
 
 async function dottedShirt() {
@@ -34,6 +41,13 @@ async function dottedShirt() {
     dottedRider = riders[riders.length-1];
     dottedShirtName.innerText = dottedRider.firstName + " " + dottedRider.lastName;
     dottedShirtTeam.innerText = dottedRider.team.teamName;
+
+    const cellField = document.getElementById('topCell' + dottedRider.riderId);
+    let icon = document.createElement('img');
+    icon.src = "../img/Dotted.jpeg";
+    icon.classList.add('shirt-icon');
+    cellField.appendChild(icon);
+
 }
 
 async function greenShirt() {
@@ -45,6 +59,12 @@ async function greenShirt() {
     greenRider = riders[riders.length-1];
     greenShirtName.innerText = greenRider.firstName + " " + greenRider.lastName;
     greenShirtTeam.innerText = greenRider.team.teamName;
+
+    const cellField = document.getElementById('topCell' + greenRider.riderId);
+    let icon = document.createElement('img');
+    icon.src = "../img/Green.jpeg";
+    icon.classList.add('shirt-icon');
+    cellField.appendChild(icon);
 }
 
 async function whiteShirt() {
@@ -71,6 +91,12 @@ async function whiteShirt() {
     whiteRider = ungList[0];
     whiteShirtName.innerText = whiteRider.firstName + " " + whiteRider.lastName;
     whiteShirtTeam.innerText = whiteRider.team.teamName;
+
+    const cellField = document.getElementById('topCell' + whiteRider.riderId);
+    let icon = document.createElement('img');
+    icon.src = "../img/White.jpeg";
+    icon.classList.add('shirt-icon');
+    cellField.appendChild(icon);
 }
 
 function isUng(ungDate, rider){

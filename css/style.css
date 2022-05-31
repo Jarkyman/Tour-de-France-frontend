@@ -19,3 +19,9 @@ input::-webkit-inner-spin-button {
 input[type=number] {
     -moz-appearance: textfield;
 }
+
+.shirt-icon {
+    width: 32px;
+    height: 32px;
+    padding-left: 2px;
+}
