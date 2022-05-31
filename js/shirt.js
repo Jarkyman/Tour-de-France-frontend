@@ -25,10 +25,12 @@ async function yellowShirt() {
     yellowShirtTeam.innerText = yellowRider.team.teamName;
 
     const cellField = document.getElementById('topCell' + yellowRider.riderId);
-    let icon = document.createElement('img');
-    icon.src = "../img/Yellow.jpeg";
-    icon.classList.add('shirt-icon');
-    cellField.appendChild(icon);
+    if (cellField) {
+        let icon = document.createElement('img');
+        icon.src = "../img/Yellow.jpeg";
+        icon.classList.add('shirt-icon');
+        cellField.appendChild(icon);
+    }
 
 }
 
@@ -38,16 +40,17 @@ async function dottedShirt() {
     let dottedRider;
     let riders = await getAllRiders();
     riders.sort((r1, r2) => r1.mountainPoints - r2.mountainPoints);
-    dottedRider = riders[riders.length-1];
+    dottedRider = riders[riders.length - 1];
     dottedShirtName.innerText = dottedRider.firstName + " " + dottedRider.lastName;
     dottedShirtTeam.innerText = dottedRider.team.teamName;
 
     const cellField = document.getElementById('topCell' + dottedRider.riderId);
-    let icon = document.createElement('img');
-    icon.src = "../img/Dotted.jpeg";
-    icon.classList.add('shirt-icon');
-    cellField.appendChild(icon);
-
+    if (cellField) {
+        let icon = document.createElement('img');
+        icon.src = "../img/Dotted.jpeg";
+        icon.classList.add('shirt-icon');
+        cellField.appendChild(icon);
+    }
 }
 
 async function greenShirt() {
@@ -56,15 +59,17 @@ async function greenShirt() {
     let greenRider;
     let riders = await getAllRiders();
     riders.sort((r1, r2) => r1.points - r2.points);
-    greenRider = riders[riders.length-1];
+    greenRider = riders[riders.length - 1];
     greenShirtName.innerText = greenRider.firstName + " " + greenRider.lastName;
     greenShirtTeam.innerText = greenRider.team.teamName;
 
     const cellField = document.getElementById('topCell' + greenRider.riderId);
-    let icon = document.createElement('img');
-    icon.src = "../img/Green.jpeg";
-    icon.classList.add('shirt-icon');
-    cellField.appendChild(icon);
+    if (cellField) {
+        let icon = document.createElement('img');
+        icon.src = "../img/Green.jpeg";
+        icon.classList.add('shirt-icon');
+        cellField.appendChild(icon);
+    }
 }
 
 async function whiteShirt() {
@@ -93,13 +98,16 @@ async function whiteShirt() {
     whiteShirtTeam.innerText = whiteRider.team.teamName;
 
     const cellField = document.getElementById('topCell' + whiteRider.riderId);
-    let icon = document.createElement('img');
-    icon.src = "../img/White.jpeg";
-    icon.classList.add('shirt-icon');
-    cellField.appendChild(icon);
+    if (cellField) {
+        let icon = document.createElement('img');
+        icon.src = "../img/White.jpeg";
+        icon.classList.add('shirt-icon');
+        cellField.appendChild(icon);
+    }
+
 }
 
-function isUng(ungDate, rider){
+function isUng(ungDate, rider) {
     if (new Date(rider.birthday) > ungDate) {
         return true;
     }
