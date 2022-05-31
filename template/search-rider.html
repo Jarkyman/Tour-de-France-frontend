@@ -5,6 +5,7 @@
     <title>Search Rider</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
           integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+    <link rel="stylesheet" href="../css/style.css">
     <script defer src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
             integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2"
             crossorigin="anonymous"></script>
@@ -129,35 +130,62 @@
                 </div>
                 <div class="modal-body">
                     <div class="input-group mb-3">
-                        <span class="input-group-text" style="width: 15%">First name</span>
-                        <input id="firstNameEdit" type="text" name="firstName" class="form-control" placeholder="Rider's name"
+                        <span class="input-group-text field">First name</span>
+                        <input id="firstNameEdit" type="text" name="firstName" class="form-control"
+                               placeholder="Rider's name"
                                aria-describedby="basic-addon1" required>
                     </div>
 
                     <div class="input-group mb-3">
-                        <span class="input-group-text" style="width: 15%">Last name</span>
-                        <input id="lastNameEdit" type="text" name="lastName" class="form-control" placeholder="Rider's last name"
+                        <span class="input-group-text field">Last name</span>
+                        <input id="lastNameEdit" type="text" name="lastName" class="form-control"
+                               placeholder="Rider's last name"
                                aria-describedby="basic-addon1" required>
                     </div>
 
                     <div class="input-group mb-3">
-                        <span class="input-group-text" style="width: 15%">Birthdate</span>
-                        <input id="birthdayEdit" type="date" name="birthday" class="form-control" placeholder="Rider's last name"
+                        <span class="input-group-text field">Birthdate</span>
+                        <input id="birthdayEdit" type="date" name="birthday" class="form-control"
+                               placeholder="Rider's last name"
                                aria-describedby="basic-addon1" required>
                     </div>
 
                     <div class="input-group mb-3">
-                        <span class="input-group-text" style="width: 15%">Country</span>
+                        <span class="input-group-text field">Country</span>
                         <select id="selectCountryEdit" class="form-select" name="country" required>
                             <option value="" disabled selected hidden>Select a country</option>
                         </select>
                     </div>
 
                     <div class="input-group mb-3">
-                        <span class="input-group-text" style="width: 15%">Team</span>
+                        <span class="input-group-text field">Team</span>
                         <select id="selectTeamEdit" class="form-select" name="team" required>
                             <option value="" disabled selected hidden>Select a team</option>
                         </select>
+                    </div>
+
+
+                    <div class="row justify-content-between">
+                        <div class="input-group mb-3 col">
+                            <span class="input-group-text field-sm">Time</span>
+                            <input id="timeEdit" type="number" name="time" class="form-control"
+                                   placeholder="xx"
+                                   aria-describedby="basic-addon1" required>
+                        </div>
+
+                        <div class="input-group mb-3 col">
+                            <span class="input-group-text field-sm">Points</span>
+                            <input id="pointsEdit" type="number" name="points" class="form-control"
+                                   placeholder="xx"
+                                   aria-describedby="basic-addon1" required>
+                        </div>
+
+                        <div class="input-group mb-3 col">
+                            <span class="input-group-text field-sm">Mountain points</span>
+                            <input id="mountainPointsEdit" type="number" name="mountainPoints" class="form-control"
+                                   placeholder="xx"
+                                   aria-describedby="basic-addon1" required>
+                        </div>
                     </div>
 
                 </div>
@@ -171,11 +199,11 @@
 </div>
 
 <!-- Modal Delete confirm-->
-<div class="modal fade" id="deleteConfirm" tabindex="-1"  aria-hidden="true">
+<div class="modal fade" id="deleteConfirm" tabindex="-1" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title" >Delete Rider</h5>
+                <h5 class="modal-title">Delete Rider</h5>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">

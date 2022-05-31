@@ -70,6 +70,10 @@ async function fillForm(rider) {
     const birthday = document.getElementById('birthdayEdit');
     const countrySelect = document.getElementById('selectCountryEdit');
     const teamSelect = document.getElementById('selectTeamEdit');
+    const time = document.getElementById('timeEdit');
+    const points = document.getElementById('pointsEdit');
+    const mountainPoints = document.getElementById('mountainPointsEdit');
+
 
     raiderId.value = rider.riderId;
     firstName.value = rider.firstName;
@@ -77,6 +81,9 @@ async function fillForm(rider) {
     birthday.value = rider.birthday;
     countrySelect.value = rider.country;
     teamSelect.value = JSON.stringify(rider.team);
+    time.value = rider.time;
+    points.value = rider.points;
+    mountainPoints.value = rider.mountainPoints;
 
     createFormEventListenerEdit();
 }
