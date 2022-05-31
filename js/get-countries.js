@@ -19,7 +19,7 @@ async function countriesDropdown() {
     await getAllCountries();
     countries.forEach((country) => {
         let option = document.createElement('option');
-        option.value = country;
+        option.value = country.country;
         option.text = country.country;
         selectCountries.options.add(option);
     });

@@ -12,6 +12,14 @@ async function yellowShirt() {
     const yellowShirtTeam = document.getElementById('yellowShirtCardTeam');
     let yellowRider;
     let riders = await getAllRiders();
+
+    for (let i = riders.length - 1; i > 0; i--) {
+        if (riders[i].time === 0) {
+            out(riders[i].firstName + riders[i].time);
+            riders.splice(i, 1);
+        }
+    }
+
     riders.sort((r1, r2) => r1.time - r2.time);
     yellowRider = riders[0];
     yellowShirtName.innerText = yellowRider.firstName + " " + yellowRider.lastName;
@@ -45,6 +53,14 @@ async function whiteShirt() {
     const whiteShirtTeam = document.getElementById('whiteShirtCardTeam');
     let whiteRider;
     let riders = await getAllRiders();
+
+    for (let i = riders.length - 1; i > 0; i--) {
+        if (riders[i].time === 0) {
+            out(riders[i].firstName + riders[i].time);
+            riders.splice(i, 1);
+        }
+    }
+
     let ungDate = new Date(subtractYears(26, new Date(Date.now())));
     let ungList = [];
     riders.forEach((rider) => {

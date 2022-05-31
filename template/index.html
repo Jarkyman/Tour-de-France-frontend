@@ -11,6 +11,7 @@
     <script defer src="https://kit.fontawesome.com/83d81f3609.js" crossorigin="anonymous"></script>
     <script defer src="../js/config.js"></script>
     <script defer src="../js/get-riders.js"></script>
+    <script defer src="../js/top-twenty.js"></script>
     <script defer src="../js/shirt.js"></script>
 </head>
 <body>
@@ -105,6 +106,25 @@
                 </div>
             </div>
         </div>
+    </div>
+    <div class="container mt-5">
+        <h2>Top 20</h2>
+        <table id="tableRider" class="table">
+            <thead>
+            <tr>
+                <th scope="col">Placement</th>
+                <th scope="col">First name</th>
+                <th scope="col">Last name</th>
+                <th scope="col">Country</th>
+                <th scope="col">Team</th>
+                <th scope="col">Time</th>
+                <th scope="col">Points</th>
+                <th scope="col">Mountain points</th>
+            </tr>
+            </thead>
+            <tbody id="topTwentyList">
+            </tbody>
+        </table>
     </div>
 </main>
 
