@@ -15,7 +15,6 @@ async function yellowShirt() {
 
     for (let i = riders.length - 1; i > 0; i--) {
         if (riders[i].time === 0) {
-            out(riders[i].firstName + riders[i].time);
             riders.splice(i, 1);
         }
     }
@@ -56,7 +55,6 @@ async function whiteShirt() {
 
     for (let i = riders.length - 1; i > 0; i--) {
         if (riders[i].time === 0) {
-            out(riders[i].firstName + riders[i].time);
             riders.splice(i, 1);
         }
     }

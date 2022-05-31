@@ -5,10 +5,10 @@ async function getTopTwenty() {
 
     for (let i = riders.length - 1; i > 0; i--) {
         if (riders[i].time === 0) {
-            out(riders[i].firstName + riders[i].time);
             riders.splice(i, 1);
         }
     }
+
 
     riders.sort((r1, r2) => r1.time - r2.time);
 
@@ -22,14 +22,10 @@ async function getTopTwenty() {
 
     });
 
-    out(riders);
-
 }
 
 function createItem(rider, index) {
     const topList = document.getElementById('topTwentyList');
-    out(rider);
-    out(index)
     let row = topList.insertRow(index)
     let cell0 = row.insertCell(0);
     let cell1 = row.insertCell(1);
