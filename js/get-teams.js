@@ -5,7 +5,7 @@ let teams = [];
  * @returns {Promise<*|*[]>}
  */
 async function getAllTeams() {
-     teams = await fetch(baseUrl + "teams").then((response) =>
+    teams = await fetch(baseUrl + "teams").then((response) =>
         response.json()
     );
     return teams;

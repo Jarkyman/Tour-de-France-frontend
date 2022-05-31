@@ -1,5 +1,8 @@
 document.addEventListener('DOMContentLoaded', setShirts);
 
+/**
+ * Calls all 4 shirt methods.
+ */
 async function setShirts() {
     await yellowShirt();
     await dottedShirt();
@@ -7,6 +10,9 @@ async function setShirts() {
     await whiteShirt();
 }
 
+/**
+ * Finds the rider with the shortest time, and set it to the yellow shirt
+ */
 async function yellowShirt() {
     const yellowShirtName = document.getElementById('yellowShirtCardName');
     const yellowShirtTeam = document.getElementById('yellowShirtCardTeam');
@@ -34,6 +40,9 @@ async function yellowShirt() {
 
 }
 
+/**
+ * Finds the rider with the most mountain points, and set it to the dotted shirt
+ */
 async function dottedShirt() {
     const dottedShirtName = document.getElementById('dottedShirtCardName');
     const dottedShirtTeam = document.getElementById('dottedShirtCardTeam');
@@ -53,6 +62,9 @@ async function dottedShirt() {
     }
 }
 
+/**
+ * Finds the rider with the most points, and set it to the green shirt
+ */
 async function greenShirt() {
     const greenShirtName = document.getElementById('greenShirtCardName');
     const greenShirtTeam = document.getElementById('greenShirtCardTeam');
@@ -72,6 +84,9 @@ async function greenShirt() {
     }
 }
 
+/**
+ * Finds the rider with the shortest time that's under 26 years old, and set it to the white shirt
+ */
 async function whiteShirt() {
     const whiteShirtName = document.getElementById('whiteShirtCardName');
     const whiteShirtTeam = document.getElementById('whiteShirtCardTeam');
@@ -113,12 +128,24 @@ async function whiteShirt() {
 
 }
 
+/**
+ * Check if the rider is under 26 years old
+ * @param ungDate date from 26 yeas ago
+ * @param rider to check
+ * @returns {boolean} true if unger
+ */
 function isUng(ungDate, rider) {
     if (new Date(rider.birthday) > ungDate) {
         return true;
     }
 }
 
+/**
+ * Subtract a given year from a date
+ * @param numOfYears years to subtract
+ * @param date date
+ * @returns {Date} subtracted date
+ */
 function subtractYears(numOfYears, date = new Date()) {
     date.setFullYear(date.getFullYear() - numOfYears);
 

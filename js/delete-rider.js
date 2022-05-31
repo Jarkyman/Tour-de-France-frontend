@@ -1,10 +1,13 @@
 const findPlayerNavDelete = document.getElementById("deletePlayerNav");
 
-
+/**
+ * Delete a rider
+ *
+ * @param rider to delete
+ * @returns {Promise<Response>}
+ */
 async function deleteRider(rider) {
-    out("rider - " + rider);
     const url = baseUrl + deleteUrl + "rider/" + rider.riderId;
-    out(url);
 
     const fetchOptions = {
         method: "DELETE",
@@ -17,7 +20,7 @@ async function deleteRider(rider) {
     if (!response) {
         out("Something went wrong with delete json");
     } else {
-        out(rider.firstName + " " + rider.lastName + " is deleted");
+        out(rider.firstName + " " + rider.lastName + ": is deleted");
     }
 
     await riderSearchList();

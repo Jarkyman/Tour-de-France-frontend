@@ -1,4 +1,7 @@
-//Print console.log
+/**
+ * Configuration script
+ */
+
 const out = function (str) {
     console.log(str);
 };

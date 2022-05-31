@@ -6,6 +6,9 @@ searchField.addEventListener('input', riderSearchList);
 
 let riders = [];
 
+/**
+ * getting search value and fetching from the backend
+ */
 async function riderSearchList() {
     riders = await fetch(searchUrl + searchField.value).then((response) =>
         response.json()

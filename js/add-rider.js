@@ -6,6 +6,9 @@ document.addEventListener("DOMContentLoaded", createFormEventListener);
 
 let riderForm;
 
+/**
+ * Creating dropdown menu with teams from database
+ */
 async function teamDropdown() {
     await getAllTeams();
     teams.forEach((team) => {
@@ -16,20 +19,26 @@ async function teamDropdown() {
     });
 }
 
-
+/**
+ * Creating form and submit handling
+ */
 function createFormEventListener() {
     riderForm = document.getElementById("addNewRider");
-    riderForm.addEventListener("submit", handleFormSubmit);
+    riderForm.addEventListener("submit", handleRiderFormSubmit);
 }
 
-
-async function handleFormSubmit(event) {
+/**
+ * Handling form data, and send it to create function
+ *
+ * @param event
+ * @returns {Promise<void>}
+ */
+async function handleRiderFormSubmit(event) {
     event.preventDefault();
     const form = event.currentTarget;
     try {
         const formData = new FormData(form);
-        const responseData = await postFormDataAsJson(url, formData);
-        out(responseData);
+        const responseData = await createRider(url, formData);
         riderForm.reset();
     } catch (err) {
         alert("Something went wrong " + err.message);
@@ -37,16 +46,21 @@ async function handleFormSubmit(event) {
     }
 }
 
-async function postFormDataAsJson(url, formData) {
+/**
+ * Fetching the data to backend, and get response
+ *
+ * @param url to sendt request
+ * @param formData object with data
+ * @returns {Promise<Response>}
+ */
+async function createRider(url, formData) {
     const plainFormData = Object.fromEntries(formData.entries());
-    out(plainFormData);
     plainFormData.team = JSON.parse(plainFormData.team);
     const formDataJsonString = JSON.stringify(plainFormData);
-    out(formDataJsonString);
 
     const fetchOptions = {
         method: "POST",
-        headers: { "Content-Type": "application/json" },
+        headers: {"Content-Type": "application/json"},
         body: formDataJsonString,
     };
 

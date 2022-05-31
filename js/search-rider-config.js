@@ -1,6 +1,10 @@
 const tableRiders = document.getElementById('tableRiders');
 document.addEventListener('DOMContentLoaded', fillDropDownEdit);
 
+/**
+ * Create Rows on table with riders
+ * Filling cells with rider information
+ */
 function addAllRiders() {
     clearTable();
 
@@ -28,6 +32,13 @@ function addAllRiders() {
 
 }
 
+/**
+ * Create the edit button to the list
+ *
+ * @param index
+ * @param rider
+ * @returns {HTMLButtonElement}
+ */
 function editButton(index, rider) {
     let editBtn = document.createElement('button');
     let icon = document.createElement('i');
@@ -44,6 +55,13 @@ function editButton(index, rider) {
     return editBtn;
 }
 
+/**
+ * Create delete button to the list
+ *
+ * @param index
+ * @param rider
+ * @returns {HTMLButtonElement}
+ */
 function deleteButton(index, rider) {
     let deleteBtn = document.createElement('button');
     let icon = document.createElement('i');
@@ -63,6 +81,11 @@ function deleteButton(index, rider) {
     return deleteBtn;
 }
 
+/**
+ * Fill information from the rider to the update form
+ *
+ * @param rider
+ */
 async function fillForm(rider) {
     const raiderId = document.getElementById('riderId');
     const firstName = document.getElementById('firstNameEdit');
@@ -88,6 +111,9 @@ async function fillForm(rider) {
     createFormEventListenerEdit();
 }
 
+/**
+ * Gets data for dropdown menu in update modal box
+ */
 async function fillDropDownEdit() {
     const countrySelect = document.getElementById('selectCountryEdit');
     const teamSelect = document.getElementById('selectTeamEdit');
@@ -109,6 +135,10 @@ async function fillDropDownEdit() {
     });
 }
 
+/**
+ * Fetching counties
+ * @returns {Array} counties
+ */
 async function getAllCountries() {
     let countries = await fetch(baseUrl + "countries").then((response) =>
         response.json()
@@ -117,6 +147,9 @@ async function getAllCountries() {
     return countries;
 }
 
+/**
+ * Clears the tabel, and remove all rows
+ */
 function clearTable() {
     for (let i = tableRiders.rows.length - 1; i >= 0; i--) {
         tableRiders.deleteRow(i);

@@ -4,8 +4,8 @@ const selectCountries = document.getElementById('selectCountry');
 document.addEventListener("DOMContentLoaded", countriesDropdown);
 
 /**
- * Fetch all teams
- * @returns {Promise<*|*[]>}
+ * Fetch all teams from database and sorts alphabetically
+ * @returns {Array} counties sorted
  */
 async function getAllCountries() {
     countries = await fetch(baseUrl + "countries").then((response) =>
@@ -15,6 +15,9 @@ async function getAllCountries() {
     return countries;
 }
 
+/**
+ * Creating dropdown menu with counties
+ */
 async function countriesDropdown() {
     await getAllCountries();
     countries.forEach((country) => {

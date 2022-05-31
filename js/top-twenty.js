@@ -1,5 +1,8 @@
 document.addEventListener('DOMContentLoaded', getTopTwenty);
 
+/**
+ * Create a list og the 20 best riders
+ */
 async function getTopTwenty() {
     let riders = await getAllRiders();
 
@@ -9,9 +12,7 @@ async function getTopTwenty() {
         }
     }
 
-
     riders.sort((r1, r2) => r1.time - r2.time);
-
 
     if (riders.length > 20) {
         riders.length = 20;
@@ -19,11 +20,15 @@ async function getTopTwenty() {
 
     riders.forEach((rider, index) => {
         createItem(rider, index);
-
     });
-
 }
 
+/**
+ * Creating row for tabel and give it data from rider to every cell
+ *
+ * @param rider to view
+ * @param index of place
+ */
 function createItem(rider, index) {
     const topList = document.getElementById('topTwentyList');
     let row = topList.insertRow(index)

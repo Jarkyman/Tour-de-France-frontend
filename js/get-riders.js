@@ -1,7 +1,9 @@
-
+/**
+ * fetching all riders from database
+ * @returns {Promise<any>}
+ */
 async function getAllRiders() {
-    let riders = await fetch(baseUrl + "riders").then((response) =>
+    return await fetch(baseUrl + "riders").then((response) =>
         response.json()
     );
-    return riders;
 }
