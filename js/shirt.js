@@ -93,16 +93,22 @@ async function whiteShirt() {
     });
     ungList.sort((r1, r2) => r1.time - r2.time);
 
-    whiteRider = ungList[0];
-    whiteShirtName.innerText = whiteRider.firstName + " " + whiteRider.lastName;
-    whiteShirtTeam.innerText = whiteRider.team.teamName;
+    if (ungList.length > 0) {
+        whiteRider = ungList[0];
+        whiteShirtName.innerText = whiteRider.firstName + " " + whiteRider.lastName;
+        whiteShirtTeam.innerText = whiteRider.team.teamName;
 
-    const cellField = document.getElementById('topCell' + whiteRider.riderId);
-    if (cellField) {
-        let icon = document.createElement('img');
-        icon.src = "../img/White.jpeg";
-        icon.classList.add('shirt-icon');
-        cellField.appendChild(icon);
+        const cellField = document.getElementById('topCell' + whiteRider.riderId);
+        if (cellField) {
+            let icon = document.createElement('img');
+            icon.src = "../img/White.jpeg";
+            icon.classList.add('shirt-icon');
+            cellField.appendChild(icon);
+        }
+
+    } else {
+        whiteShirtName.innerText = "No ung players";
+        whiteShirtTeam.innerText = "Team";
     }
 
 }
